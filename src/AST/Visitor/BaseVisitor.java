@@ -1281,7 +1281,9 @@ postfixOperator
     @Override
     public PostfixOperator visitPostfixOperator(AngularaParser.PostfixOperatorContext ctx) {
         PostfixOperator postfixOperator=new PostfixOperator();
+        if(ctx.DOT() != null)
         postfixOperator.setDOT(ctx.DOT().getText());
+        if(ctx.IDENTIFIER() != null)
         postfixOperator.setIDENTIFIER(ctx.IDENTIFIER().getText());
         if(ctx.LBRACK() != null)
         postfixOperator.setLBRACK(ctx.LBRACK().getText());
@@ -1413,8 +1415,11 @@ arrowParameters
     @Override
     public ArrowParameters visitArrowParameters(AngularaParser.ArrowParametersContext ctx) {
         ArrowParameters arrowParameters=new ArrowParameters();
+        if(ctx.IDENTIFIER() != null)
         arrowParameters.setIDENTIFIER(ctx.IDENTIFIER().getText());
+        if(ctx.LPAREN() != null)
         arrowParameters.setLPAREN(ctx.LPAREN().getText());
+        if(ctx.RPAREN() != null)
         arrowParameters.setRPAREN(ctx.RPAREN().getText());
         if (ctx.parameterList() != null) {
             arrowParameters.setParameterList(visitParameterList(ctx.parameterList()));
