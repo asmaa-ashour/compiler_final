@@ -232,11 +232,15 @@ public class BaseVisitor extends AngularaParserBaseVisitor {
     @Override
     public ClassDeclaration visitClassDeclaration(AngularaParser.ClassDeclarationContext ctx) {
         ClassDeclaration classDeclaration=new ClassDeclaration();
+        if(ctx.CLASS()!= null)
         classDeclaration.setCLASS(ctx.CLASS().getText());
         if(ctx.EXTENDS() != null)
         classDeclaration.setEXTENDS(ctx.EXTENDS().getText());
+        if(ctx.IMPLEMENTS()!= null)
         classDeclaration.setIMPLEMENTS(ctx.IMPLEMENTS().getText());
+        if(ctx.LBRACE()!= null)
         classDeclaration.setLBRACE(ctx.LBRACE().getText());
+        if(ctx.RBRACE()!= null)
         classDeclaration.setRBRACE(ctx.RBRACE().getText());
         if (ctx.classBody()!=null)
         {
@@ -460,10 +464,13 @@ fieldDeclaration
             fieldDeclaration.setAccessModifier(visitAccessModifier(ctx.accessModifier()));
 
         }
+        if(ctx.IDENTIFIER()!= null)
         fieldDeclaration.setIDENTIFIER(ctx.IDENTIFIER().getText());
+        if(ctx.COLON()!= null)
         fieldDeclaration.setCOLON(ctx.COLON().getText());
         if(ctx.ASSIGN() != null)
         fieldDeclaration.setASSIGN(ctx.ASSIGN().getText());
+        if(ctx.SEMI_Q()!= null)
         fieldDeclaration.setSEMI_Q(ctx.SEMI_Q().getText());
         if (ctx.typeAnnotation() != null) {
             fieldDeclaration.setTypeAnnotation(visitTypeAnnotation(ctx.typeAnnotation()));

@@ -10,7 +10,8 @@ import static org.antlr.v4.runtime.CharStreams.fromFileName;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String source ="src//Test//test1.txt";
+        //String source ="src//Test//test1.txt";
+        String source ="src//Test//test2.txt";
         CharStream cs =  fromFileName(source);
         AngularaLexer lexer = new AngularaLexer(cs);
         CommonTokenStream token = new CommonTokenStream(lexer);
