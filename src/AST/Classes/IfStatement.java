@@ -54,7 +54,7 @@ ifStatement
         this.expression = expression;
     }
 
-    public Block getBlock() {
+    public Block getBlock(int i) {
         return block;
     }
 

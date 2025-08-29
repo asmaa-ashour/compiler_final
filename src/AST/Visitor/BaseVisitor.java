@@ -183,12 +183,17 @@ public class BaseVisitor extends AngularaParserBaseVisitor {
         ComponentMetadataProperty componentMetadataProperty=new ComponentMetadataProperty();
         if(ctx.SELECTOR() != null)
             componentMetadataProperty.setSELECTOR(ctx.SELECTOR().getText());
-        if(ctx.COLON() != null)
-        componentMetadataProperty.setCOLON(ctx.COLON().getText());
-        if(ctx.STRING() != null)
-        componentMetadataProperty.setSTRING(ctx.STRING().getText());
-        if(ctx.STANDALONE() != null)
+        if(ctx.COLON() != null){
+            componentMetadataProperty.setCOLON(ctx.COLON().getText());
+
+        }
+        if(ctx.STRING() != null){
+            componentMetadataProperty.setSTRING(ctx.STRING().getText());
+        }
+        if(ctx.STANDALONE() != null){
             componentMetadataProperty.setSTANDALONE(ctx.STANDALONE().getText());
+
+        }
         if(ctx.BOOLEAN_LITERAL() != null)
             componentMetadataProperty.setBOOLEAN_LITERAL(ctx.BOOLEAN_LITERAL().getText());
         if(ctx.TEMPLATE() != null)
@@ -232,16 +237,26 @@ public class BaseVisitor extends AngularaParserBaseVisitor {
     @Override
     public ClassDeclaration visitClassDeclaration(AngularaParser.ClassDeclarationContext ctx) {
         ClassDeclaration classDeclaration=new ClassDeclaration();
-        if(ctx.CLASS()!= null)
-        classDeclaration.setCLASS(ctx.CLASS().getText());
-        if(ctx.EXTENDS() != null)
-        classDeclaration.setEXTENDS(ctx.EXTENDS().getText());
-        if(ctx.IMPLEMENTS()!= null)
-        classDeclaration.setIMPLEMENTS(ctx.IMPLEMENTS().getText());
-        if(ctx.LBRACE()!= null)
-        classDeclaration.setLBRACE(ctx.LBRACE().getText());
-        if(ctx.RBRACE()!= null)
-        classDeclaration.setRBRACE(ctx.RBRACE().getText());
+        if(ctx.CLASS()!= null){
+            classDeclaration.setCLASS(ctx.CLASS().getText());
+
+        }
+        if(ctx.EXTENDS() != null){
+            classDeclaration.setEXTENDS(ctx.EXTENDS().getText());
+
+        }
+        if(ctx.IMPLEMENTS()!= null){
+            classDeclaration.setIMPLEMENTS(ctx.IMPLEMENTS().getText());
+
+        }
+        if(ctx.LBRACE()!= null){
+            classDeclaration.setLBRACE(ctx.LBRACE().getText());
+
+        }
+        if(ctx.RBRACE()!= null){
+            classDeclaration.setRBRACE(ctx.RBRACE().getText());
+
+        }
         if (ctx.classBody()!=null)
         {
             classDeclaration.setClassBody(visitClassBody(ctx.classBody()));
@@ -346,14 +361,22 @@ public class BaseVisitor extends AngularaParserBaseVisitor {
     @Override
     public MethodDeclaration visitMethodDeclaration(AngularaParser.MethodDeclarationContext ctx) {
         MethodDeclaration methodDeclaration=new MethodDeclaration();
-        if(ctx.IDENTIFIER()!= null)
-        methodDeclaration.setIDENTIFIER(ctx.IDENTIFIER().getText());
-        if(ctx.LPAREN()!= null)
-        methodDeclaration.setLPAREN(ctx.LPAREN().getText());
-        if(ctx.RPAREN()!= null)
-        methodDeclaration.setRPAREN(ctx.RPAREN().getText());
-        if(ctx.COLON()!= null)
-        methodDeclaration.setCOLON(ctx.COLON().getText());
+        if(ctx.IDENTIFIER()!= null){
+            methodDeclaration.setIDENTIFIER(ctx.IDENTIFIER().getText());
+
+        }
+        if(ctx.LPAREN()!= null){
+            methodDeclaration.setLPAREN(ctx.LPAREN().getText());
+
+        }
+        if(ctx.RPAREN()!= null){
+            methodDeclaration.setRPAREN(ctx.RPAREN().getText());
+
+        }
+        if(ctx.COLON()!= null){
+            methodDeclaration.setCOLON(ctx.COLON().getText());
+
+        }
         if (ctx.paramList()!=null)
         {
             methodDeclaration.setParamList(visitParamList(ctx.paramList()));
@@ -406,10 +429,13 @@ param
         {
             param.setAccessModifier(visitAccessModifier(ctx.accessModifier()));
         }
-        if(ctx.IDENTIFIER()!= null)
-        param.setIDENTIFIER(ctx.IDENTIFIER().getText());
+        if(ctx.IDENTIFIER()!= null){
+            param.setIDENTIFIER(ctx.IDENTIFIER().getText());
+
+        }
         if(ctx.COLON()!= null)
-        param.setCOLON(ctx.COLON().getText());
+        {
+            param.setCOLON(ctx.COLON().getText());        }
         if(ctx.HTML()!= null)
          param.setLINK(ctx.HTML().getText());
         if(ctx.HEAD()!= null)
@@ -443,12 +469,17 @@ accessModifier
     @Override
     public AccessModifier visitAccessModifier(AngularaParser.AccessModifierContext ctx) {
         AccessModifier accessModifier=new AccessModifier();
-        if(ctx.PRIVATE() != null)
-        accessModifier.setPRIVATE(ctx.PRIVATE().getText());
-        if(ctx.PROTECTED() != null)
-        accessModifier.setPROTECTED(ctx.PROTECTED().getText());
-        if(ctx.PUBLIC() != null)
-        accessModifier.setPUBLIC(ctx.PUBLIC().getText());
+        if(ctx.PRIVATE() != null){
+            accessModifier.setPRIVATE(ctx.PRIVATE().getText());
+
+        }
+        if(ctx.PROTECTED() != null){
+            accessModifier.setPROTECTED(ctx.PROTECTED().getText());
+        }
+        if(ctx.PUBLIC() != null){
+            accessModifier.setPUBLIC(ctx.PUBLIC().getText());
+
+        }
         return  accessModifier;
     }
 /*
@@ -464,14 +495,21 @@ fieldDeclaration
             fieldDeclaration.setAccessModifier(visitAccessModifier(ctx.accessModifier()));
 
         }
-        if(ctx.IDENTIFIER()!= null)
-        fieldDeclaration.setIDENTIFIER(ctx.IDENTIFIER().getText());
-        if(ctx.COLON()!= null)
-        fieldDeclaration.setCOLON(ctx.COLON().getText());
-        if(ctx.ASSIGN() != null)
-        fieldDeclaration.setASSIGN(ctx.ASSIGN().getText());
-        if(ctx.SEMI_Q()!= null)
-        fieldDeclaration.setSEMI_Q(ctx.SEMI_Q().getText());
+        if(ctx.IDENTIFIER()!= null){
+            fieldDeclaration.setIDENTIFIER(ctx.IDENTIFIER().getText());
+
+        }
+        if(ctx.COLON()!= null){
+            fieldDeclaration.setCOLON(ctx.COLON().getText());
+
+        }
+        if(ctx.ASSIGN() != null){
+            fieldDeclaration.setASSIGN(ctx.ASSIGN().getText());
+
+        }
+        if(ctx.SEMI_Q()!= null){
+            fieldDeclaration.setSEMI_Q(ctx.SEMI_Q().getText());
+        }
         if (ctx.typeAnnotation() != null) {
             fieldDeclaration.setTypeAnnotation(visitTypeAnnotation(ctx.typeAnnotation()));
         }
@@ -599,22 +637,22 @@ typeName
     @Override
     public TypeName visitTypeName(AngularaParser.TypeNameContext ctx) {
        TypeName typeName=new TypeName();
-       if (ctx.IDENTIFIER() != null)
-       typeName.setIDENTIFIER(ctx.IDENTIFIER().getText());
-       if(ctx.NUMBER_TYPE() != null)
-       typeName.setNUMBER_TYPE(ctx.NUMBER_TYPE().getText());
-        if(ctx.BOOLEAN_TYPE() != null)
-       typeName.setBOOLEAN_TYPE(ctx.BOOLEAN_TYPE().getText());
-        if(ctx.VOID() != null)
-       typeName.setVOID(ctx.VOID().getText());
-        if(ctx.STRING_TYPE() != null)
-       typeName.setSTRING_TYPE(ctx.STRING_TYPE().getText());
-        if(ctx.NULL() != null)
-       typeName.setNULL(ctx.NULL().getText());
-        if(ctx.RBRACK() != null)
-       typeName.setRBRACK(ctx.RBRACK().getText());
-        if(ctx.LBRACK() != null)
-       typeName.setLBRACK(ctx.LBRACK().getText());
+       if (ctx.IDENTIFIER() != null){
+       typeName.setIDENTIFIER(ctx.IDENTIFIER().getText());}
+       if(ctx.NUMBER_TYPE() != null){
+       typeName.setNUMBER_TYPE(ctx.NUMBER_TYPE().getText());}
+        if(ctx.BOOLEAN_TYPE() != null){
+       typeName.setBOOLEAN_TYPE(ctx.BOOLEAN_TYPE().getText());}
+        if(ctx.VOID() != null){
+       typeName.setVOID(ctx.VOID().getText());}
+        if(ctx.STRING_TYPE() != null){
+       typeName.setSTRING_TYPE(ctx.STRING_TYPE().getText());}
+        if(ctx.NULL() != null){
+       typeName.setNULL(ctx.NULL().getText());}
+        if(ctx.RBRACK() != null){
+       typeName.setRBRACK(ctx.RBRACK().getText());}
+        if(ctx.LBRACK() != null){
+       typeName.setLBRACK(ctx.LBRACK().getText());}
         if (ctx.genericArguments() != null) {
             typeName.setGenericArguments(visitGenericArguments(ctx.genericArguments()));
         }
@@ -660,10 +698,10 @@ typeAnnotationWithArray
         if (ctx.typeAnnotation() != null) {
             typeAnnotationWithArray.setTypeAnnotation(visitTypeAnnotation(ctx.typeAnnotation()));
         }
-        if(ctx.LBRACK() != null)
-        typeAnnotationWithArray.setLBRACK(ctx.LBRACK().getText());
-        if(ctx.RBRACK() != null)
-        typeAnnotationWithArray.setRBRACK(ctx.RBRACK().getText());
+        if(ctx.LBRACK() != null){
+        typeAnnotationWithArray.setLBRACK(ctx.LBRACK().getText());}
+        if(ctx.RBRACK() != null){
+        typeAnnotationWithArray.setRBRACK(ctx.RBRACK().getText());}
         return typeAnnotationWithArray;
     }
 /*
@@ -782,30 +820,30 @@ variableDeclaration
     @Override
     public VariableDeclaration visitVariableDeclaration(AngularaParser.VariableDeclarationContext ctx) {
         VariableDeclaration variableDeclaration=new VariableDeclaration();
-        if(ctx.LET()!= null)
-        variableDeclaration.setLET(ctx.LET().getText());
-        if(ctx.COLON()!= null)
-        variableDeclaration.setCOLON(ctx.COLON().getText());
-        if(ctx.META()!= null)
-        variableDeclaration.setMETA(ctx.META().getText());
-        if(ctx.HTML()!= null)
-        variableDeclaration.setHTML(ctx.HTML().getText());
-        if(ctx.HEAD()!= null)
-        variableDeclaration.setHEAD(ctx.HEAD().getText());
-        if(ctx.BODY()!= null)
-        variableDeclaration.setBODY(ctx.BODY().getText());
-        if(ctx.IDENTIFIER()!= null)
-        variableDeclaration.setIDENTIFIER(ctx.IDENTIFIER().getText());
-        if(ctx.TITLE()!= null)
-        variableDeclaration.setTITLE(ctx.TITLE().getText());
-        if(ctx.BASE()!= null)
-        variableDeclaration.setBASE(ctx.BASE().getText());
-        if(ctx.LINK()!= null)
-        variableDeclaration.setLINK(ctx.LINK().getText());
-        if(ctx.ASSIGN()!= null)
-        variableDeclaration.setASSIGN(ctx.ASSIGN().getText());
-        if(ctx.SEMI_Q()!= null)
-        variableDeclaration.setSEMI_Q(ctx.SEMI_Q().getText());
+        if(ctx.LET()!= null){
+        variableDeclaration.setLET(ctx.LET().getText());}
+        if(ctx.COLON()!= null){
+        variableDeclaration.setCOLON(ctx.COLON().getText());}
+        if(ctx.META()!= null){
+        variableDeclaration.setMETA(ctx.META().getText());}
+        if(ctx.HTML()!= null){
+        variableDeclaration.setHTML(ctx.HTML().getText());}
+        if(ctx.HEAD()!= null){
+        variableDeclaration.setHEAD(ctx.HEAD().getText());}
+        if(ctx.BODY()!= null){
+        variableDeclaration.setBODY(ctx.BODY().getText());}
+        if(ctx.IDENTIFIER()!= null){
+        variableDeclaration.setIDENTIFIER(ctx.IDENTIFIER().getText());}
+        if(ctx.TITLE()!= null){
+        variableDeclaration.setTITLE(ctx.TITLE().getText());}
+        if(ctx.BASE()!= null){
+        variableDeclaration.setBASE(ctx.BASE().getText());}
+        if(ctx.LINK()!= null){
+        variableDeclaration.setLINK(ctx.LINK().getText());}
+        if(ctx.ASSIGN()!= null){
+        variableDeclaration.setASSIGN(ctx.ASSIGN().getText());}
+        if(ctx.SEMI_Q()!= null){
+        variableDeclaration.setSEMI_Q(ctx.SEMI_Q().getText());}
         if (ctx.typeAnnotation() != null) {
             variableDeclaration.setTypeAnnotation(visitTypeAnnotation(ctx.typeAnnotation()));
         }
@@ -852,11 +890,10 @@ destructuringAssignment
                 }
             }
         }
-        if(ctx.IDENTIFIER() != null){
-            for (int i=0;i<ctx.IDENTIFIER().size();i++){
-                if(ctx.COMMA(i)!= null){
+        if (ctx.IDENTIFIER() != null) {
+            for (int i = 0; i < ctx.IDENTIFIER().size(); i++) {
+                if (ctx.IDENTIFIER(i) != null) {
                     destructuringList.getIDENTIFIER().add(ctx.IDENTIFIER(i).getText());
-
                 }
             }
         }
@@ -871,14 +908,14 @@ ifStatement
     @Override
     public IfStatement visitIfStatement(AngularaParser.IfStatementContext ctx) {
        IfStatement ifStatement=new IfStatement();
-        if(ctx.ELSE() != null)
-       ifStatement.setIF(ctx.IF().getText());
-        if(ctx.ELSE() != null)
-       ifStatement.setLPAREN(ctx.LPAREN().getText());
-        if(ctx.ELSE() != null)
-       ifStatement.setRPAREN(ctx.RPAREN().getText());
-       if(ctx.ELSE() != null)
-       ifStatement.setELSE(ctx.ELSE().getText());
+        if(ctx.IF() != null){
+       ifStatement.setIF(ctx.IF().getText());}
+        if(ctx.LPAREN() != null){
+       ifStatement.setLPAREN(ctx.LPAREN().getText());}
+        if(ctx.RPAREN() != null){
+       ifStatement.setRPAREN(ctx.RPAREN().getText());}
+       if(ctx.ELSE() != null){
+       ifStatement.setELSE(ctx.ELSE().getText());}
         if (ctx.expression() != null) {
             ifStatement.setExpression(visitExpression(ctx.expression()));
         }
@@ -902,7 +939,10 @@ expressionStatement
         if (ctx.expression() != null) {
             expressionStatement.setExpression(visitExpression(ctx.expression()));
         }
-        expressionStatement.setSEMI_Q(ctx.SEMI_Q().getText());
+        if(ctx.SEMI_Q() != null){
+            expressionStatement.setSEMI_Q(ctx.SEMI_Q().getText());
+
+        }
 
     return  expressionStatement;
     }
@@ -936,8 +976,8 @@ assignmentExpression
         if (ctx.assignmentExpression() != null) {
             assignmentExpression.setAssignmentExpression(visitAssignmentExpression(ctx.assignmentExpression()));
         }
-        if(ctx.ASSIGN() != null)
-        assignmentExpression.setASSIGN(ctx.ASSIGN().getText());
+        if(ctx.ASSIGN() != null){
+        assignmentExpression.setASSIGN(ctx.ASSIGN().getText());}
         return  assignmentExpression;
     }
 /*
@@ -961,7 +1001,7 @@ public ConditionalExpression visitConditionalExpression(AngularaParser.Condition
         conditionalExpression.setQUESTION(ctx.QUESTION().getText());
 
         // الحصول على أول assignmentExpression (بعد '?')
-        if (ctx.assignmentExpression() != null && ctx.assignmentExpression().size() > 0) {
+        if (ctx.assignmentExpression() != null && !ctx.assignmentExpression().isEmpty()) {
             conditionalExpression.setAssignmentExpression(
                     visitAssignmentExpression(ctx.assignmentExpression(0))
             );
@@ -1209,12 +1249,12 @@ unaryExpression
         if (ctx.unaryExpression() != null) {
             unaryExpression.setUnaryExpression(visitUnaryExpression(ctx.unaryExpression()));
         }
-        if(ctx.PLUS() != null)
-        unaryExpression.setPLUS(ctx.PLUS().getText());
-        if(ctx.MINUS() != null)
-        unaryExpression.setMINUS(ctx.MINUS().getText());
-        if(ctx.EXCLAMATION() != null)
-        unaryExpression.setEXCLAMATION(ctx.EXCLAMATION().getText());
+        if(ctx.PLUS() != null){
+        unaryExpression.setPLUS(ctx.PLUS().getText());}
+        if(ctx.MINUS() != null){
+        unaryExpression.setMINUS(ctx.MINUS().getText());}
+        if(ctx.EXCLAMATION() != null){
+        unaryExpression.setEXCLAMATION(ctx.EXCLAMATION().getText());}
         return unaryExpression;
 
     }
@@ -1234,8 +1274,8 @@ unaryExpression
         if (ctx.typeName() != null) {
             postfixExpression.setTypeName(visitTypeName(ctx.typeName()));
         }
-        if(ctx.AS() != null)
-        postfixExpression.setAS(ctx.AS().getText());
+        if(ctx.AS() != null){
+        postfixExpression.setAS(ctx.AS().getText());}
         if(ctx.postfixOperator() !=null){
             for(int i =0 ;i<ctx.postfixOperator().size();i++){
                 if(ctx.postfixOperator(i) !=null) {
@@ -1288,22 +1328,22 @@ postfixOperator
     @Override
     public PostfixOperator visitPostfixOperator(AngularaParser.PostfixOperatorContext ctx) {
         PostfixOperator postfixOperator=new PostfixOperator();
-        if(ctx.DOT() != null)
-        postfixOperator.setDOT(ctx.DOT().getText());
-        if(ctx.IDENTIFIER() != null)
-        postfixOperator.setIDENTIFIER(ctx.IDENTIFIER().getText());
-        if(ctx.LBRACK() != null)
-        postfixOperator.setLBRACK(ctx.LBRACK().getText());
-        if(ctx.RBRACK() != null)
-        postfixOperator.setRBRACK(ctx.RBRACK().getText());
-        if(ctx.LPAREN() != null)
-        postfixOperator.setLPAREN(ctx.LPAREN().getText());
-        if(ctx.RPAREN() != null)
-        postfixOperator.setRPAREN(ctx.RPAREN().getText());
+        if(ctx.DOT() != null){
+        postfixOperator.setDOT(ctx.DOT().getText());}
+        if(ctx.IDENTIFIER() != null){
+        postfixOperator.setIDENTIFIER(ctx.IDENTIFIER().getText());}
+        if(ctx.LBRACK() != null){
+        postfixOperator.setLBRACK(ctx.LBRACK().getText());}
+        if(ctx.RBRACK() != null){
+        postfixOperator.setRBRACK(ctx.RBRACK().getText());}
+        if(ctx.LPAREN() != null){
+        postfixOperator.setLPAREN(ctx.LPAREN().getText());}
+        if(ctx.RPAREN() != null){
+        postfixOperator.setRPAREN(ctx.RPAREN().getText());}
         if (ctx.argumentList() != null) {
             postfixOperator.setArgumentList(visitArgumentList(ctx.argumentList()));
         }
-        if (ctx.exception != null) {
+        if (ctx.expression() != null) {
             postfixOperator.setExpression(visitExpression(ctx.expression()));
 
         }
@@ -1331,67 +1371,79 @@ primaryExpression
     ;
 
  */
-    @Override
-    public PrimaryExpression visitPrimaryExpression(AngularaParser.PrimaryExpressionContext ctx) {
-        PrimaryExpression primaryExpression=new PrimaryExpression();
-        if(ctx.THIS() != null)
+@Override
+public PrimaryExpression visitPrimaryExpression(AngularaParser.PrimaryExpressionContext ctx) {
+    PrimaryExpression primaryExpression = new PrimaryExpression();
+    if (ctx.THIS() != null) {
         primaryExpression.setTHIS(ctx.THIS().getText());
-        if(ctx.IDENTIFIER() != null)
-            primaryExpression.setIDENTIFIER(ctx.IDENTIFIER().getText());
-        if(ctx.HTML() != null)
-            primaryExpression.setHTML(ctx.HTML().getText());
-        if(ctx.HEAD() != null)
-            primaryExpression.setHEAD(ctx.HEAD().getText());
-        if(ctx.BODY() != null)
-            primaryExpression.setBODY(ctx.BODY().getText());
-        if(ctx.META() != null)
-        primaryExpression.setMETA(ctx.META().getText());
-        if(ctx.TITLE() != null)
-        primaryExpression.setTITLE(ctx.TITLE().getText());
-        if(ctx.BASE() != null)
-        primaryExpression.setBASE(ctx.BASE().getText());
-        if(ctx.LINK() != null)
-        primaryExpression.setLINK(ctx.LINK().getText());
-        if(ctx.LPAREN() != null)
-        primaryExpression.setLPAREN(ctx.LPAREN().getText());
-        if(ctx.RPAREN() != null)
-        primaryExpression.setRPAREN(ctx.RPAREN().getText());
-        if(ctx.TEMPLATE_STR() != null)
-        primaryExpression.setTEMPLATE_STR(ctx.TEMPLATE_STR().getText());
-        if(ctx.NEW() != null)
-        primaryExpression.setNEW(ctx.NEW().getText());
-        if(ctx.IMPORT() != null)
-        primaryExpression.setIMPORT(ctx.IMPORT().getText());
-        if(ctx.DOT(0) != null &&ctx.DOT(1) != null)
-        primaryExpression.setDOT(ctx.DOT(0).getText() + ctx.DOT(1).getText());
-
-        if (ctx.literal() != null) {
-            primaryExpression.setObjectLiteral(visitObjectLiteral(ctx.objectLiteral()));
-        }
-        if (ctx.arrayLiteral() != null) {
-            primaryExpression.setArrayLiteral(visitArrayLiteral(ctx.arrayLiteral()));
-        }
-        if (ctx.objectLiteral() != null) {
-            primaryExpression.setObjectLiteral(visitObjectLiteral(ctx.objectLiteral()));
-        }
-        if (ctx.expression() != null) {
-            primaryExpression.setExpression(visitExpression(ctx.expression()));
-        }
-        if (ctx.arrowFunction() != null) {
-            primaryExpression.setArrowFunction(visitArrowFunction(ctx.arrowFunction()));
-        }
-        if (ctx.genericArguments() != null) {
-            primaryExpression.setGenericArguments(visitGenericArguments(ctx.genericArguments()));
-        }
-
-        if (ctx.argumentList() != null) {
-            primaryExpression.setArgumentList(visitArgumentList(ctx.argumentList()));
-        }
-
-
-        return primaryExpression;
-
     }
+    if (ctx.IDENTIFIER() != null) {
+        primaryExpression.setIDENTIFIER(ctx.IDENTIFIER().getText());
+    }
+    if (ctx.HTML() != null) {
+        primaryExpression.setHTML(ctx.HTML().getText());
+    }
+    if (ctx.HEAD() != null) {
+        primaryExpression.setHEAD(ctx.HEAD().getText());
+    }
+    if (ctx.BODY() != null) {
+        primaryExpression.setBODY(ctx.BODY().getText());
+    }
+    if (ctx.META() != null) {
+        primaryExpression.setMETA(ctx.META().getText());
+    }
+    if (ctx.TITLE() != null) {
+        primaryExpression.setTITLE(ctx.TITLE().getText());
+    }
+    if (ctx.BASE() != null) {
+        primaryExpression.setBASE(ctx.BASE().getText());
+    }
+    if (ctx.LINK() != null) {
+        primaryExpression.setLINK(ctx.LINK().getText());
+    }
+    if (ctx.LPAREN() != null) {
+        primaryExpression.setLPAREN(ctx.LPAREN().getText());
+    }
+    if (ctx.RPAREN() != null) {
+        primaryExpression.setRPAREN(ctx.RPAREN().getText());
+    }
+    if (ctx.TEMPLATE_STR() != null) {
+        primaryExpression.setTEMPLATE_STR(ctx.TEMPLATE_STR().getText());
+    }
+    if (ctx.NEW() != null) {
+        primaryExpression.setNEW(ctx.NEW().getText());
+    }
+    if (ctx.IMPORT() != null) {
+        primaryExpression.setIMPORT(ctx.IMPORT().getText());
+    }
+    if (ctx.DOT(0) != null && ctx.DOT(1) != null) {
+        primaryExpression.setDOT(ctx.DOT(0).getText() + ctx.DOT(1).getText());
+    }
+
+    if (ctx.literal() != null) {
+        primaryExpression.setLiteral(visitLiteral(ctx.literal()));
+    }
+    if (ctx.arrayLiteral() != null) {
+        primaryExpression.setArrayLiteral(visitArrayLiteral(ctx.arrayLiteral()));
+    }
+    if (ctx.objectLiteral() != null) { // مرة واحدة فقط
+        primaryExpression.setObjectLiteral(visitObjectLiteral(ctx.objectLiteral()));
+    }
+    if (ctx.expression() != null) {
+        primaryExpression.setExpression(visitExpression(ctx.expression()));
+    }
+    if (ctx.arrowFunction() != null) {
+        primaryExpression.setArrowFunction(visitArrowFunction(ctx.arrowFunction()));
+    }
+    if (ctx.genericArguments() != null) {
+        primaryExpression.setGenericArguments(visitGenericArguments(ctx.genericArguments()));
+    }
+    if (ctx.argumentList() != null) {
+        primaryExpression.setArgumentList(visitArgumentList(ctx.argumentList()));
+    }
+
+    return primaryExpression;
+}
 /*
 arrowFunction
     : arrowParameters ARROW arrowBody
@@ -1422,12 +1474,12 @@ arrowParameters
     @Override
     public ArrowParameters visitArrowParameters(AngularaParser.ArrowParametersContext ctx) {
         ArrowParameters arrowParameters=new ArrowParameters();
-        if(ctx.IDENTIFIER() != null)
-        arrowParameters.setIDENTIFIER(ctx.IDENTIFIER().getText());
-        if(ctx.LPAREN() != null)
-        arrowParameters.setLPAREN(ctx.LPAREN().getText());
-        if(ctx.RPAREN() != null)
-        arrowParameters.setRPAREN(ctx.RPAREN().getText());
+        if(ctx.IDENTIFIER() != null){
+        arrowParameters.setIDENTIFIER(ctx.IDENTIFIER().getText());}
+        if(ctx.LPAREN() != null){
+        arrowParameters.setLPAREN(ctx.LPAREN().getText());}
+        if(ctx.RPAREN() != null){
+        arrowParameters.setRPAREN(ctx.RPAREN().getText());}
         if (ctx.parameterList() != null) {
             arrowParameters.setParameterList(visitParameterList(ctx.parameterList()));
         }
@@ -1469,7 +1521,10 @@ parameter
     public Parameter visitParameter(AngularaParser.ParameterContext ctx) {
 Parameter parameter =new Parameter();
 parameter.setIDENTIFIER(ctx.IDENTIFIER().getText());
-parameter.setCOLON(ctx.COLON().getText());
+if(ctx.COLON()!= null){
+    parameter.setCOLON(ctx.COLON().getText());
+
+}
         if (ctx.typeAnnotation() != null) {
             parameter.setTypeAnnotation(visitTypeAnnotation(ctx.typeAnnotation()));
         }return parameter;
@@ -1532,10 +1587,18 @@ literal
     @Override
     public Literal visitLiteral(AngularaParser.LiteralContext ctx) {
 Literal literal=new Literal();
-literal.setSTRING(ctx.STRING().getText());
-literal.setNUMBER(ctx.NUMBER().getText());
-literal.setBOOLEAN_LITERAL(ctx.BOOLEAN_LITERAL().getText());
-literal.setNULL(ctx.NULL().getText());
+if(ctx.STRING()  != null){
+    literal.setSTRING(ctx.STRING().getText());
+}
+if (ctx.NUMBER() != null){
+    literal.setNUMBER(ctx.NUMBER().getText());
+}
+if(ctx.BOOLEAN_LITERAL() != null){
+    literal.setBOOLEAN_LITERAL(ctx.BOOLEAN_LITERAL().getText());
+}
+if(ctx.NULL() != null){
+    literal.setNULL(ctx.NULL().getText());
+}
 return literal;
 
     }
@@ -1558,8 +1621,8 @@ value
             value.setArrayLiteral(visitArrayLiteral(ctx.arrayLiteral()));
 
         }
-        if(ctx.TEMPLATE_STR() != null)
-        value.setTEMPLATE_STR(ctx.TEMPLATE_STR().getText());
+        if(ctx.TEMPLATE_STR() != null){
+        value.setTEMPLATE_STR(ctx.TEMPLATE_STR().getText());}
 return  value;
     }
 /*
@@ -1611,10 +1674,10 @@ objectLiteral
             return null; // أو رجع ObjectLiteral فاضي
         }
         ObjectLiteral objectLiteral=new ObjectLiteral();
-        if(ctx.LBRACE() != null)
-        objectLiteral.setLBRACE(ctx.LBRACE().getText());
-        if(ctx.RBRACE() != null)
-        objectLiteral.setRBRACE(ctx.RBRACE().getText());
+        if(ctx.LBRACE() != null){
+        objectLiteral.setLBRACE(ctx.LBRACE().getText());}
+        if(ctx.RBRACE() != null){
+        objectLiteral.setRBRACE(ctx.RBRACE().getText());}
         if(ctx.objectProperty() !=null){
             for(int i =0 ;i<ctx.objectProperty().size();i++){
                 if(ctx.objectProperty(i) !=null) {
@@ -1651,12 +1714,12 @@ objectProperty
     @Override
     public  ObjectProperty visitObjectProperty(AngularaParser.ObjectPropertyContext ctx) {
         ObjectProperty objectProperty=new ObjectProperty();
-        if(ctx.IDENTIFIER() != null)
-        objectProperty.setIDENTIFIER(ctx.IDENTIFIER().getText());
-        if(ctx.COLON() != null)
-        objectProperty.setCOLON(ctx.COLON().getText());
-        if(ctx.SPREAD() != null)
-            objectProperty.setSPREAD(ctx.SPREAD().getText());
+        if(ctx.IDENTIFIER() != null){
+        objectProperty.setIDENTIFIER(ctx.IDENTIFIER().getText());}
+        if(ctx.COLON() != null){
+        objectProperty.setCOLON(ctx.COLON().getText());}
+        if(ctx.SPREAD() != null){
+            objectProperty.setSPREAD(ctx.SPREAD().getText());}
         if (ctx.expression() != null) {
             objectProperty.setExpression(visitExpression(ctx.expression()));
         }
@@ -1670,8 +1733,10 @@ htmlDocument
     @Override
     public HtmlDocument visitHtmlDocument(AngularaParser.HtmlDocumentContext ctx) {
         HtmlDocument htmlDocument=new HtmlDocument();
-        htmlDocument.setDOCTYPE(ctx.DOCTYPE().getText());
-        if(ctx.htmlElement() !=null){
+        if (ctx.DOCTYPE() != null) {
+            htmlDocument.setDOCTYPE(ctx.DOCTYPE().getText());
+        }
+            if(ctx.htmlElement() !=null){
             for(int i =0 ;i<ctx.htmlElement().size();i++){
                 if(ctx.htmlElement(i) !=null) {
                     htmlDocument.getHtmlElement().add(visitHtmlElement(ctx.htmlElement(i)));
@@ -1715,6 +1780,11 @@ public HtmlElement visitHtmlElement(AngularaParser.HtmlElementContext ctx) {
         node.getAttribute().add(visitAttribute(actx));
     }
 
+    // htmlContent: معالجة المحتوى الداخلي
+    for (AngularaParser.HtmlContentContext contentCtx : ctx.htmlContent()) {
+        node.getHtmlContent().add(visitHtmlContent(contentCtx));
+    }
+
     return node;
 }
 
@@ -1734,14 +1804,32 @@ htmlTagName
     @Override
     public HtmlTagName visitHtmlTagName(AngularaParser.HtmlTagNameContext ctx) {
         HtmlTagName htmlTagName=new HtmlTagName();
-        htmlTagName.setMETA(ctx.META().getText());
-        htmlTagName.setHTML(ctx.HTML().getText());
-        htmlTagName.setHEAD(ctx.HEAD().getText());
-        htmlTagName.setBODY(ctx.BODY().getText());
-        htmlTagName.setIDENTIFIER(ctx.IDENTIFIER().getText());
-        htmlTagName.setTITLE(ctx.TITLE().getText());
-        htmlTagName.setBASE(ctx.BASE().getText());
-        htmlTagName.setLINK(ctx.LINK().getText());
+        if(ctx.META() != null){
+            htmlTagName.setMETA(ctx.META().getText());
+
+        }
+        if(ctx.HTML() != null){ htmlTagName.setHTML(ctx.HTML().getText());}
+        if(ctx.HEAD() != null){
+            htmlTagName.setHEAD(ctx.HEAD().getText());
+
+        }
+        if(ctx.BODY() != null){
+            htmlTagName.setBODY(ctx.BODY().getText());
+
+        }
+        if(ctx.IDENTIFIER() != null){
+            htmlTagName.setIDENTIFIER(ctx.IDENTIFIER().getText());
+
+        }if(ctx.TITLE() != null){
+            htmlTagName.setTITLE(ctx.TITLE().getText());
+
+        }if(ctx.BASE() != null){
+            htmlTagName.setBASE(ctx.BASE().getText());
+
+        }if(ctx.LINK() != null){
+            htmlTagName.setLINK(ctx.LINK().getText());
+
+        }
         return htmlTagName;
     }
 /*
@@ -1759,11 +1847,17 @@ htmlContent
         if (ctx.htmlElement() != null) {
             htmlContent.setHtmlElement(visitHtmlElement(ctx.htmlElement()));
         }
+        if(ctx.STRING() != null){
+            htmlContent.setSTRING(ctx.STRING().getText());
+        }
+        if (ctx.IDENTIFIER() != null) {
+            htmlContent.setIDENTIFIER(ctx.IDENTIFIER().getText());
+
+        }
         if (ctx.expression() != null) {
             htmlContent.setExpression(visitExpression(ctx.expression()));
         }
-        htmlContent.setSTRING(ctx.STRING().getText());
-htmlContent.setIDENTIFIER(ctx.IDENTIFIER().getText());
+
 return htmlContent;
 
     }
@@ -1776,15 +1870,20 @@ return htmlContent;
  */
     @Override
     public Attribute visitAttribute(AngularaParser.AttributeContext ctx) {
-Attribute attribute=new Attribute();
-attribute.setIDENTIFIER(ctx.IDENTIFIER(0).getText());
-attribute.setIDENTIFIER(ctx.IDENTIFIER(1).getText());
-attribute.setASSIGN(ctx.ASSIGN().getText());
-attribute.setNUMBER(ctx.NUMBER().getText());
-attribute.setBOOLEAN_LITERAL(ctx.BOOLEAN_LITERAL().getText());
-attribute.setSTRING(ctx.STRING().getText());
-
-return  attribute;
-    }
-
+        Attribute attribute = new Attribute();
+        attribute.setIDENTIFIER(ctx.IDENTIFIER(0).getText());
+        if (ctx.ASSIGN() != null) {
+            attribute.setASSIGN(ctx.ASSIGN().getText());
+            if (ctx.IDENTIFIER(1) != null) {
+                attribute.setIDENTIFIER(ctx.IDENTIFIER(1).getText());
+            } else if (ctx.NUMBER() != null) {
+                attribute.setNUMBER(ctx.NUMBER().getText());
+            } else if (ctx.BOOLEAN_LITERAL() != null) {
+                attribute.setBOOLEAN_LITERAL(ctx.BOOLEAN_LITERAL().getText());
+            } else if (ctx.STRING() != null) {
+                attribute.setSTRING(ctx.STRING().getText());
+            }
+        }
+        return attribute;
+}
 }

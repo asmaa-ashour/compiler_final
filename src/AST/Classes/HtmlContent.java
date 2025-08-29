@@ -48,16 +48,16 @@ public class HtmlContent {
 
     @Override
     public String toString() {
-        if (htmlElement != null) {
-            return htmlElement.toString();
-        } else if (expression != null) {
-            return expression.toString();
-        } else if (STRING != null) {
+        if (STRING != null) {
             return STRING;
         } else if (IDENTIFIER != null) {
             return IDENTIFIER;
+        } else if (htmlElement != null) {
+            return htmlElement.toString();
+        } else if (expression != null) {
+            return expression.toString();
         }
-        return ""; // إذا لم يكن هناك شيء
+        return "";
     }
 
 }

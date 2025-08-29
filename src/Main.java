@@ -10,8 +10,16 @@ import static org.antlr.v4.runtime.CharStreams.fromFileName;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        //String source ="src//Test//test1.txt";
-        String source ="src//Test//test2.txt";
+   //   String source ="src//Test//Component.txt";
+//       String source ="src//Test//product.service.txt";
+//        String source ="src//Test//serverRoutes.txt";
+//        String source ="src//Test//rout.txt";
+//        String source ="src//Test//mainServer.txt";
+//        String source ="src//Test//server.txt";
+//        String source ="src//Test//main.txt";
+        String source ="src//Test//index.txt";
+//         String source ="src//Test//test.txt";
+
         CharStream cs =  fromFileName(source);
         AngularaLexer lexer = new AngularaLexer(cs);
         CommonTokenStream token = new CommonTokenStream(lexer);
@@ -23,3 +31,19 @@ public class Main {
 
     }
 }
+/*
+public class Main {
+    public static void main(String[] args) throws Exception {
+        ANTLRInputStream input = new ANTLRInputStream(new FileInputStream("input.html"));
+        AngularaLexer lexer = new AngularaLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        AngularaParser parser = new AngularaParser(tokens);
+        ParseTree tree = parser.htmlDocument();
+        BaseVisitor visitor = new BaseVisitor();
+        HtmlDocument doc = visitor.visit(tree);
+        CodeGenerator generator = new CodeGenerator();
+        generator.visitHtmlDocument(doc);
+        System.out.println(generator.getOutput());
+    }
+}
+ */

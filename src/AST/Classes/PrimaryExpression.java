@@ -22,6 +22,7 @@ public class PrimaryExpression {
     | IMPORT DOT META DOT IDENTIFIER
     ;
      */
+    private Literal Literal;
     private String THIS;
     private String IDENTIFIER;
     private String HTML;
@@ -212,6 +213,14 @@ public class PrimaryExpression {
         this.argumentList = argumentList;
     }
 
+    public Literal getLiteral() {
+        return Literal;
+    }
+
+    public void setLiteral(Literal literal) {
+        Literal = literal;
+    }
+
     @Override
     public String toString() {
         if (THIS != null) return THIS;
@@ -223,6 +232,7 @@ public class PrimaryExpression {
         if (TITLE != null) return TITLE;
         if (BASE != null) return BASE;
         if (LINK != null) return LINK;
+        if (Literal != null) return Literal.toString();
         if (TEMPLATE_STR != null) return TEMPLATE_STR;
         if (expression != null && LPAREN != null && RPAREN != null)
             return LPAREN + expression.toString() + RPAREN;

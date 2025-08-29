@@ -19,8 +19,6 @@ expression
 
     @Override
     public String toString() {
-        return "Expression{" +
-                 assignmentExpression +
-                '}';
+        return assignmentExpression != null ? assignmentExpression.toString() : "";
     }
 }

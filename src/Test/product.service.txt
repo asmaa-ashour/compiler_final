@@ -1,0 +1,38 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+export interface Product {
+  name: string;
+  description: string;
+  price: number | null;
+  image: string;
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ProductService {
+  private productsSubject = new BehaviorSubject<Product[]>([]);
+  products$: Observable<Product[]> = this.productsSubject.asObservable();
+
+  getProducts(): Product[] {
+    return this.productsSubject.getValue();
+  }
+
+  addProduct(product: Product) {
+    const currentProducts = this.getProducts();
+    this.productsSubject.next([...currentProducts, product]);
+  }
+
+  updateProduct(index: number, updatedProduct: Product) {
+    const currentProducts = this.getProducts();
+    const updatedProducts = [...currentProducts];
+    updatedProducts[index] = updatedProduct;
+    this.productsSubject.next(updatedProducts);
+  }
+
+  deleteProduct(index: number) {
+    const currentProducts = this.getProducts();
+    this.productsSubject.next(currentProducts.filter((_, i) => i !== index));
+  }
+}
